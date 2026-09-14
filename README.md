@@ -1,2 +1,0 @@
-# Wellness-rep
-Landing page

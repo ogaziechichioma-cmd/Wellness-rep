@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regent Stores — Beauty, Health & Wellness</title>
+<meta name="description" content="Your one stop shop for everything beauty, health and wellness. Collagen skincare, men's performance supplements and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img data-logo src="/assets/logo.jpg" alt="Regent Stores"><span data-business-name>Regent Stores</span></a>
+    <nav class="main-nav">
+      <span class="nav-links">
+        <a href="/">Home</a>
+        <a href="/products.html">Products</a>
+        <a href="#contact">Contact</a>
+      </span>
+      <button class="cart-toggle" data-open-cart>Cart <span class="cart-count" id="cart-count">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">BEAUTY · HEALTH · WELLNESS</div>
+      <h1>Feel radiant. Perform confidently. Every single day.</h1>
+      <p data-tagline>Your one stop shop for everything beauty, health and wellness.</p>
+      <div class="hero-cta">
+        <button class="btn btn-gold" data-open-cart>Order Now</button>
+        <a class="btn btn-outline" style="border-color:rgba(247,242,234,0.4); color:var(--ivory)" href="/products.html">Shop all products</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img data-hero-image src="/assets/hero.jpg" alt="Regent Stores featured product">
+    </div>
+  </div>
+</section>
+
+<section class="about-strip">
+  <div class="wrap">
+    <div>
+      <div class="section-head" style="margin-bottom:20px;">
+        <div class="eyebrow">WHY REGENT STORES</div>
+        <h2>Trusted formulas, honest results.</h2>
+      </div>
+      <p data-about-text>We source and combo our collagen skincare and men's wellness essentials so you get more value in every order — without compromising on quality or discretion.</p>
+      <div class="stat-row">
+        <div class="stat"><b>4</b><span>Signature combos</span></div>
+        <div class="stat"><b>100%</b><span>Discreet delivery</span></div>
+        <div class="stat"><b>24/7</b><span>WhatsApp support</span></div>
+      </div>
+    </div>
+    <img data-about-image src="/assets/product-collagen-alt.jpg" alt="Regent Stores products">
+  </div>
+</section>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">OUR COMBOS</div>
+      <h2>Every order includes a free extra.</h2>
+    </div>
+    <div class="product-grid" id="featured-grid">
+      <p style="padding:24px;">Loading products…</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-block">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:var(--gold); font-weight:700; font-size:0.85rem; margin-bottom:10px;">READY TO ORDER?</div>
+      <h2 style="color:var(--ivory)">Place your order on WhatsApp.</h2>
+      <p style="color:rgba(247,242,234,0.75)">Tap below, tell us what you'd like and your delivery address, and we'll confirm and get it packed.</p>
+      <a class="btn btn-gold" data-wa-order-link href="https://wa.me/2348072335354" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </div>
+    <div>
+      <div class="contact-line">📞 <a data-contact-phone href="tel:+2348072335354">+234 807 233 5354</a></div>
+      <div class="contact-line">✉️ <a data-contact-email href="#">hello@regentstores.com</a></div>
+      <div class="contact-line">📷 <a data-instagram href="#" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> <span data-business-name>Regent Stores</span>. All rights reserved.</span>
+    <a href="/admin.html" style="color:inherit; text-decoration:none;">Admin</a>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" data-wa-link href="https://wa.me/2348072335354" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.6.7 5.1 2 7.3L2 30l6.9-1.8c2.1 1.2 4.5 1.8 7.1 1.8 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.3 0-4.5-.6-6.4-1.8l-.5-.3-4.1 1.1 1.1-4-.3-.5C4.6 20.1 4 18.1 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.6-8.7c-.4-.2-2.1-1-2.4-1.2-.3-.1-.6-.2-.8.2-.2.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.1.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.7-.4z"/></svg>
+</a>
+
+<!-- Order Now floating button -->
+<button class="btn btn-gold order-float" data-open-cart>Order Now</button>
+
+<!-- Cart drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-head">
+    <h3 style="margin:0;">Your cart</h3>
+    <button data-close-cart aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total</span><span id="cart-total-amount">₦0</span></div>
+    <button class="btn btn-primary btn-block" id="checkout-whatsapp">Checkout via WhatsApp</button>
+  </div>
+</aside>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/supabase-client.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[build]
+  command = "node build.js"
+  publish = "."
+
+[[redirects]]
+  from = "/product/*"
+  to = "/product.html"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200

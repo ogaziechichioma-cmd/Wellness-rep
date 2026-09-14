@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Regent Stores</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-shell">
+
+<!-- LOGIN -->
+<div id="admin-login-view">
+  <div class="admin-login">
+    <h2 style="font-size:1.4rem;">Admin sign in</h2>
+    <p style="font-size:0.9rem;">Sign in with the admin email and password you created in Supabase Authentication.</p>
+    <form id="login-form">
+      <label>Email</label>
+      <input type="email" id="login-email" required>
+      <label>Password</label>
+      <input type="password" id="login-password" required>
+      <div class="admin-error" id="login-error"></div>
+      <button class="btn btn-primary btn-block" style="margin-top:20px;" type="submit">Sign in</button>
+    </form>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="admin-dashboard-view" style="display:none;">
+  <div class="admin-topbar">
+    <strong>Regent Stores — Admin</strong>
+    <div>
+      <a href="/" style="color:var(--ivory); margin-right:20px; font-size:0.9rem;">View site</a>
+      <button class="btn btn-outline" style="border-color:var(--ivory); color:var(--ivory); padding:8px 16px;" id="logout-btn">Sign out</button>
+    </div>
+  </div>
+
+  <div class="admin-main">
+    <div class="admin-tabs">
+      <button data-tab="products" class="active">Products</button>
+      <button data-tab="settings">Contact & Site Info</button>
+    </div>
+
+    <div class="admin-panel" id="panel-products">
+      <p style="font-size:0.9rem; color:var(--ink-soft);">Edit product names, prices, descriptions, images and reviews below. Changes appear on the live site as soon as you click "Save changes".</p>
+      <div id="products-admin-list"><p>Loading products…</p></div>
+
+      <div class="admin-card admin-form">
+        <h3 style="margin-top:0;">Add a new product</h3>
+        <label>Product name</label>
+        <input type="text" id="new-p-name" placeholder="e.g. Vitamin C Brightening Serum">
+        <label>Price (₦)</label>
+        <input type="number" id="new-p-price" placeholder="e.g. 20000">
+        <label>Promo note (optional, e.g. "Buy 1, Get 1 Free")</label>
+        <input type="text" id="new-p-note">
+        <div class="save-bar">
+          <button class="btn btn-primary" onclick="createProduct()">Add product</button>
+          <span class="save-msg" id="new-product-msg" style="display:none;">Added — edit its full details below</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-panel" id="panel-settings" style="display:none;">
+      <div class="admin-card admin-form">
+        <h3 style="margin-top:0;">Logo</h3>
+        <div class="upload-row">
+          <img id="s-logo-preview" class="admin-thumb" style="width:70px; height:70px; border-radius:50%; object-fit:cover;" src="" alt="">
+          <div>
+            <input type="file" accept="image/*" onchange="handleLogoImage(event)">
+            <div class="field-hint">Shown in the header and as your site's favicon.</div>
+          </div>
+        </div>
+        <input type="hidden" id="s-logo-url">
+      </div>
+
+      <div class="admin-card admin-form">
+        <h3 style="margin-top:0;">Hero image (homepage banner)</h3>
+        <div class="upload-row">
+          <img id="s-hero-preview" class="admin-thumb" style="width:90px; height:110px;" src="" alt="">
+          <div>
+            <input type="file" accept="image/*" onchange="handleHeroImage(event)">
+            <div class="field-hint">This is the large image shown at the top of your homepage.</div>
+          </div>
+        </div>
+        <input type="hidden" id="s-hero-url">
+      </div>
+
+      <div class="admin-card admin-form">
+        <h3 style="margin-top:0;">About section image</h3>
+        <div class="upload-row">
+          <img id="s-about-preview" class="admin-thumb" style="width:90px; height:70px;" src="" alt="">
+          <div>
+            <input type="file" accept="image/*" onchange="handleAboutImage(event)">
+            <div class="field-hint">Shown next to your "Why Regent Stores" text on the homepage.</div>
+          </div>
+        </div>
+        <input type="hidden" id="s-about-url">
+      </div>
+
+      <form class="admin-card admin-form" id="settings-form">
+        <h3 style="margin-top:0;">Business & contact information</h3>
+        <label>Business name</label>
+        <input type="text" id="s-business-name">
+        <label>Tagline</label>
+        <input type="text" id="s-tagline">
+        <label>About text</label>
+        <textarea id="s-about"></textarea>
+        <label>WhatsApp number (digits only, with country code, e.g. 2348072335354)</label>
+        <input type="text" id="s-whatsapp">
+        <label>Pre-filled WhatsApp order message (shown to customers to fill in and send)</label>
+        <textarea id="s-order-template" style="min-height:140px;"></textarea>
+        <label>Contact email</label>
+        <input type="email" id="s-email">
+        <label>Instagram URL</label>
+        <input type="text" id="s-instagram">
+        <div class="save-bar">
+          <button class="btn btn-primary" type="submit">Save changes</button>
+          <span class="save-msg" id="settings-save-msg" style="display:none;">Saved</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/supabase-config.js"></script>
+<script src="/js/supabase-client.js"></script>
+<script src="/js/admin.js"></script>
+</body>
+</html>

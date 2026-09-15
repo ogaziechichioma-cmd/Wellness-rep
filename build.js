@@ -4,7 +4,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const url = process.env.SUPABASE_URL || '';
+// The Supabase client appends /rest/v1 itself, so strip it here in case
+// the SUPABASE_URL env var was set to the full REST endpoint instead of
+// the bare project URL (e.g. "https://xxx.supabase.co/rest/v1/").
+const url = (process.env.SUPABASE_URL || '').replace(/\/rest\/v1\/?$/, '').replace(/\/+$/, '');
 const key = process.env.SUPABASE_ANON_KEY || '';
 
 const content = `// AUTO-GENERATED at deploy time from Netlify environment variables.
